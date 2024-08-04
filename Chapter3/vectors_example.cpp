@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>   // For std::sort
-#include <ranges>      // For std::ranges::sort (C++20 feature)
 
 int main() {
     // Initialize vectors
@@ -36,7 +35,7 @@ int main() {
 
     // Compute median temperature
     if (!temps.empty()) {
-        std::ranges::sort(temps); // sort the temperatures
+        std::sort(temps.begin(), temps.end()); // sort the temperatures
         size_t n = temps.size();
         if (n % 2 == 0) {
             // If even, average the two middle values
